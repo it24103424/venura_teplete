@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="venura/styles.css">
+    <script>
+        function handleLogin(event) {
+            event.preventDefault(); // Prevent the default form submission
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            if (username && password) {
+                // Validate credentials if needed, then redirect
+                window.location.href = "home.html"; // Redirect to a new page after successful login
+            } else {
+                alert("Please enter both username and password.");
+            }
+        }
+    </script>
+
+<style>
+    body{
+    background-image: url(venura/8069.jpg_wh1200.jpg);
+    }
+</style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form onsubmit="handleLogin(event)">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+            <p class="signup-text">Don't have an account? <a href="signin.html">Sign up</a></p>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Appointment System</title>
+    <link rel="stylesheet" href="venura/doctors.css">
+    <style>
+        /* Basic CSS for styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .book-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .book-btn:hover {
+            background-color: #45a049;
+        }
+
+        .appointment-form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #007bb5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Doctor Appointment System</h1>
+        </header>
+
+        <section class="doctors-schedule">
+            <h2>Available Doctors & Their Schedules</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Doctor Name</th>
+                        <th>Available Time</th>
+                        <th>Book Appointment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dr. John Doe</td>
+                        <td>9:00 AM - 12:00 PM</td>
+                        <td><button class="book-btn" onclick="bookAppointment('Dr. John Doe')">Book Now</button></td>
+                    </tr>
+                    <tr>
+                        <td>Dr. Jane Smith</td>
+                        <td>1:00 PM - 4:00 PM</td>
+                        <td><button class="book-btn" onclick="bookAppointment('Dr. Jane Smith')">Book Now</button></td>
+                    </tr>
+                    <tr>
+                        <td>Dr. Mark Lee</td>
+                        <td>4:00 PM - 7:00 PM</td>
+                        <td><button class="book-btn" onclick="bookAppointment('Dr. Mark Lee')">Book Now</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="appointment-form">
+            <h2>Appointment Details</h2>
+            <form id="appointment-form">
+                <label for="patient-name">Your Name:</label>
+                <input type="text" id="patient-name" name="patient-name" required>
+
+                <label for="doctor-name">Doctor:</label>
+                <input type="text" id="doctor-name" name="doctor-name" readonly>
+
+                <label for="appointment-number">Appointment Number:</label>
+                <input type="text" id="appointment-number" name="appointment-number" readonly>
+
+                <button type="submit">Confirm Appointment</button>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        let appointmentCounter = 1;
+
+        function bookAppointment(doctorName) {
+            const doctorInput = document.getElementById('doctor-name');
+            const appointmentNumberInput = document.getElementById('appointment-number');
+            
+            doctorInput.value = doctorName;
+            appointmentNumberInput.value = appointmentCounter;
+            
+            appointmentCounter++; // Increment for next appointment
+        }
+
+        document.getElementById('appointment-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Retrieve values from the form
+            const patientName = document.getElementById('patient-name').value;
+            const doctorName = document.getElementById('doctor-name').value;
+            const appointmentNumber = document.getElementById('appointment-number').value;
+
+            // Display the collected data
+            console.log(Patient Name: ${patientName});
+            console.log(Doctor Name: ${doctorName});
+            console.log(Appointment Number: ${appointmentNumber});
+
+            // Display confirmation message
+            alert(Appointment confirmed for ${patientName} with ${doctorName}.);
+
+            // Optionally reset the form
+            this.reset();
+            appointmentCounter = 1; // Reset appointment counter if desired
+        });
+    </script>
+</body>
+</html>

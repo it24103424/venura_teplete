@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viweka Hospital Home</title>
+    <link rel="stylesheet" href="venura/home.css">
+    <style>
+        body{
+        background-image: url(venura/venu.webp);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="doctors.html">Doctors</a></li>
+            <li><a href="">Appointment</a></li>
+            <li><a href="about.html">About Us</a></li>
+            
+            
+        </ul>
+    </nav>
+
+    <!-- Banner Section -->
+    <header class="banner">
+        <h1>Welcome to Viweka hospital</h1>
+        <p>Your health, our priority. Book your appointment now!</p>
+    </header>
+
+    <!-- Doctors Section -->
+    <section id="doctors">
+        <h2>Our Doctors</h2>
+        <div class="doctor-list">
+            <div class="doctor-card">
+                <h3>Dr. Anindu pathirana</h3>
+                <p>Specialist: Cardiologist</p>
+                <p>Available: Monday - Friday, 9 AM - 12 PM</p>
+            </div>
+            <div class="doctor-card">
+                <h3>Dr. Priyantha halapagee</h3>
+                <p>Specialist: Pediatrician</p>
+                <p>Available: Tuesday - Saturday, 10 AM - 2 PM</p>
+            </div>
+            <div class="doctor-card">
+                <h3>Dr. eshan pepera</h3>
+                <p>Specialist: Dermatologist</p>
+                <p>Available: Monday - Thursday, 1 PM - 4 PM</p>
+            </div>
+        
+    </section>
+
+        <!-- Doctors Section -->
+        <section id="doctors">
+        
+            <div class="doctor-list">
+                <div class="doctor-card">
+                    <h3>Dr. Anindu pathirana</h3>
+                    <p>Specialist: Cardiologist</p>
+                    <p>Available: Monday - Friday, 9 AM - 12 PM</p>
+                </div>
+                <div class="doctor-card">
+                    <h3>Dr. Priyantha halapagee</h3>
+                    <p>Specialist: Pediatrician</p>
+                    <p>Available: Tuesday - Saturday, 10 AM - 2 PM</p>
+                </div>
+                <div class="doctor-card">
+                    <h3>Dr. eshan pepera</h3>
+                    <p>Specialist: Dermatologist</p>
+                    <p>Available: Monday - Thursday, 1 PM - 4 PM</p>
+                </div>
+            
+        </section>
+
+    <!-- Appointment Section -->
+    <section id="appointment">
+        <h2>Book an Appointment</h2>
+        <form action="/submit-appointment" method="post">
+            <div class="input-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="input-group">
+                <label for="doctor">Choose Doctor</label>
+                <select id="doctor" name="doctor" required>
+                    <option value="Dr. John Doe">Dr. John Doe (Cardiologist)</option>
+                    <option value="Dr. Sarah Smith">Dr. Sarah Smith (Pediatrician)</option>
+                    <option value="Dr. Emily Brown">Dr. Emily Brown (Dermatologist)</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="date">Choose Date</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are dedicated to providing the best healthcare services with a team of highly qualified professionals. Our center is equipped with state-of-the-art facilities to ensure your health is in the best hands.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Viweka Hospital. All rights reserved.</p>
+    </footer>
+</body>
+</html>
